@@ -1,8 +1,8 @@
+import type { NextPage } from 'next';
 import Image from 'next/image'
-import { Inter } from 'next/font/google';
 import { RandomFox } from '@/components/RandomFox';
 
-const inter = Inter({ subsets: ['latin'] })
+const random = ():number => Math.floor(Math.random() * 123) + 1;
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
       <h1 className="text-3xl font-bold underline">
         Hello platzi!
       </h1>
-      <RandomFox />
+      <RandomFox image={`https://randomfox.ca/images/${random()}.jpg`}/>
     </main>
   )
 }
